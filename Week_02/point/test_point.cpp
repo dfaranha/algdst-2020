@@ -9,9 +9,12 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 	int i, j, cnt = 0;
-
-	assert(argc == 3);
 	srandom(time(0));
+
+	if (argc != 3) {
+		cout << "Usage: test_point n d" << endl;
+		return -1;
+	}
 
 	int N = atoi(argv[1]);
 	float d = atof(argv[2]);

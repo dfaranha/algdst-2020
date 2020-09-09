@@ -10,7 +10,10 @@ using namespace std;
 int main(int argc, char *argv[]) {
 	int i, j, cnt = 0, equ = 0;
 
-	assert(argc == 3);
+	if (argc != 3) {
+		cout << "Usage: test_point_plus n d" << endl;
+		return -1;
+	}
 	srandom(time(0));
 
 	int N = atoi(argv[1]);
@@ -30,6 +33,6 @@ int main(int argc, char *argv[]) {
 		}
 	}
 	cout << cnt << " pairs within distance " << d << endl;
-	cout << equ << " pairs of equal pointns " << endl;
+	cout << equ << " pairs of equal points " << endl;
 	delete [] array;
 }
