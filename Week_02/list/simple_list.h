@@ -20,7 +20,7 @@ class List {
 		tail->next = nullptr;
 	}
 
-	~List() { delete head; delete tail; }
+	~List() { clear(); delete head; delete tail; }
 
 	int size() { return theSize; }
 	bool empty() { return (size() == 0); }

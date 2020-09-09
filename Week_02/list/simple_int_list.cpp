@@ -10,6 +10,7 @@ List::List() {
 }
 
 List::~List() {
+	clear();
 	delete head;
 	delete tail;
 }
