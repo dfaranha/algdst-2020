@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
 	queue->put(3);
 	queue->put(7);
 
-	cout << "Back element:   " << queue->back() << endl;
+	cout << "Front element:   " << queue->front() << endl;
 	while (queue->empty() == false) {
 		cout << "Next element:   " << queue->get() << endl;
 	}

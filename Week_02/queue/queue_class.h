@@ -16,7 +16,7 @@ class Queue {
 	~Queue() { delete list; }
 
 	bool empty() { return (list->size() == 0); }
-	Object back() { return list->find_kth(0); };
+	Object front() { return list->find_kth(0); };
 	Object get() { return list->pop_front(); };
 
 	void put(const Object x) {
