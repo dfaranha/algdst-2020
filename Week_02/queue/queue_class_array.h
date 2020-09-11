@@ -21,7 +21,11 @@ class Queue {
 	~Queue() { delete[] data; }
 
 	bool empty() { return (size == 0); }
-	Object back() { return data[head % N]; }
+
+	Object front() {
+		assert(empty() == false);
+		return data[head % N];
+	 }
 
 	Object get() {
 		assert(empty() == false);
