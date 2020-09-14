@@ -7,7 +7,7 @@ int main(void) {
 	int i;
 	/* We initialize with default capacity, resize later. */
 	Vector<int> v;
-	Vector<int>::iterator iter;
+	Vector<int>::iterator itr;
 
 	cout << "Capacity: " << v.capacity() << " elements" << endl;
 	v.push_back(5);
@@ -22,15 +22,15 @@ int main(void) {
 	}
 	cout << "Capacity: " << v.capacity() << " elements" << endl;
 
-	/* Now let us process the vector through iterator */
-	for(iter = v.begin(); iter != v.end(); iter++) {
-	    cout << *iter << " ";
+	/* Now let us process the vector through itrator */
+	for(itr = v.begin(); itr != v.end(); itr++) {
+	    cout << *itr << " ";
 	}
 	cout << endl;
 
-	for(iter = v.begin(); iter != v.end(); iter++) {
-		*iter = *iter + 1;
-	    cout << *iter << " ";
+	for(itr = v.begin(); itr != v.end(); itr++) {
+		*itr = *itr + 1;
+	    cout << *itr << " ";
 	}
 	cout << endl;
 

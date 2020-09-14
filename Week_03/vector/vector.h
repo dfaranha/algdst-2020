@@ -3,7 +3,7 @@
 
 using namespace std;
 
-#include <stdexcept>
+#include <cassert>
 
 #define DEFAULT_CAPACITY	(2)
 
@@ -22,9 +22,7 @@ class Vector {
   	}
 
 	Vector(int capacity) {
-		if (capacity <= 0) {
-			throw invalid_argument("Negative capacity.");
-		}
+		assert(capacity >= 0);
 		theSize = 0;
 		theCapacity = capacity;
 		objects = new Object[theCapacity];
@@ -33,8 +31,7 @@ class Vector {
     ~Vector( ) { delete [] objects; }
 
 	Object &operator[](int index) {
-		if (index < 0 || index >= theSize)
-			throw out_of_range("Invalid position.");
+		assert(index > 0 && index < theSize);
 		return objects[index];
 	}
 
