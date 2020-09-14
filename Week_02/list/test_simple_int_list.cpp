@@ -26,6 +26,5 @@ int main(int argc, char *argv[]) {
 	}
 	cout << "List is empty?   " << list->empty() << endl;
 
-	list->clear();
 	delete list;
 }

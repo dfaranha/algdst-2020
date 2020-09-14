@@ -18,7 +18,6 @@ int main(int argc, char *argv[]) {
 	}
 	cout << "List is empty?  " << list->empty() << endl;
 
-	list->clear();
 	delete list;
 
 	List<float> *listf = new List<float>();
@@ -35,6 +34,5 @@ int main(int argc, char *argv[]) {
 	}
 	cout << "List is empty?  " << listf->empty() << endl;
 
-	listf->clear();
 	delete listf;
 }
