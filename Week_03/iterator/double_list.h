@@ -30,13 +30,13 @@ class List {
 	bool empty() { return (size() == 0); }
 
 	void clear();
-	void push_front(const Object x);
-	void push_back(const Object x);
+	void push_front(const Object& x);
+	void push_back(const Object& x);
 	Object pop_front();
     Object pop_back();
 
 	/* We define the iterator in another file. */
-	#include "double_list_iter.h"
+	#include "double_list_itr.h"
 
 	iterator begin() {
 		return iterator(head->next);
@@ -46,6 +46,27 @@ class List {
 		return iterator(tail);
 	}
 
+	iterator insert(iterator itr, const Object& x) {
+		Node *p = itr.current;
+		Node *q = new Node();
+		q->data = x;
+		q->prev = p->prev;
+		q->next = p;
+		p->prev = p->prev->next = q;
+		theSize++;
+		return iterator(q);
+	}
+
+	iterator erase(iterator itr) {
+		Node *p = itr.current;
+		iterator retVal{ p->next };
+		p->prev->next = p->next;
+		p->next->prev = p->prev;
+		delete p;
+		theSize--;
+
+		return retVal;
+	}
 };
 
 #include "double_list.tpp"

@@ -13,7 +13,7 @@ void List<Object>::clear() {
 }
 
 template <typename Object>
-void List<Object>::push_front(const Object x) {
+void List<Object>::push_front(const Object& x) {
 	Node *p = new Node;
 	Node *t = head->next;
 	p->data = x;
@@ -25,7 +25,7 @@ void List<Object>::push_front(const Object x) {
 }
 
 template <typename Object>
-void List<Object>::push_back(const Object x) {
+void List<Object>::push_back(const Object& x) {
 	Node *p = new Node;
 	Node *t = tail->prev;
 	p->data = x;
