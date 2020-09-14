@@ -42,7 +42,7 @@ void List::push_front(int x) {
 }
 
 void List::insert(int x, int pos) {
-	assert(pos >= 0 && pos < theSize);
+	assert(pos >= 0 && pos <= theSize);
 	Node *p = head->next;
 	while (pos > 1) {
 		p = p->next;
