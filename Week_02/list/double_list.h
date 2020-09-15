@@ -31,7 +31,7 @@ class List {
 	void push_front(const Object x);
 	void push_back(const Object x);
 	Object pop_front();
-    Object pop_back();
+	Object pop_back();
 	Object find_kth(int pos);
 };
 

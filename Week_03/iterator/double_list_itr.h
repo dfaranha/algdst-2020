@@ -40,11 +40,13 @@ class iterator {
 		return old;
 	}
 
-	bool operator== (const iterator & rhs) const
-	  { return current == rhs.current; }
+	bool operator== (const iterator & rhs) {
+		return current == rhs.current;
+	}
 
-	bool operator!= (const iterator & rhs) const
-	  { return !(*this == rhs); }
+	bool operator!= (const iterator & rhs) {
+		return !(*this == rhs);
+	}
 
 	friend class List<Object>;
 };

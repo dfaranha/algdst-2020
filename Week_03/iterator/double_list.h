@@ -13,7 +13,7 @@ class List {
     };
 	int   theSize;
 	Node *head;
-    Node *tail;
+	Node *tail;
 
   public:
 	List() {
@@ -33,7 +33,7 @@ class List {
 	void push_front(const Object& x);
 	void push_back(const Object& x);
 	Object pop_front();
-    Object pop_back();
+	Object pop_back();
 
 	/* We define the iterator in another file. */
 	#include "double_list_itr.h"

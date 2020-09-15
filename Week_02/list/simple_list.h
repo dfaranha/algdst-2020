@@ -10,7 +10,7 @@ class List {
     };
 	int   theSize;
 	Node *head;
-    Node *tail;
+	Node *tail;
 
   public:
 	List() {
@@ -27,7 +27,7 @@ class List {
 
 	void clear();
 	void push_front(const Object x);
-    Object pop_front();
+	Object pop_front();
 	Object find_kth(int pos);
 };
 
