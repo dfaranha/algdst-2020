@@ -11,7 +11,7 @@ class List {
     };
 	int   theSize;
 	Node *head;
-    Node *tail;
+	Node *tail;
 
 	Node *scan(int pos) {
 		Node *p = head->next;
@@ -41,7 +41,7 @@ class List {
 	void push_back(const Object x);
 	void insert(Object x, int pos);
 	Object pop_front();
-    Object pop_back();
+	Object pop_back();
 	Object find_kth(int pos);
 	Object remove(int pos);
 };

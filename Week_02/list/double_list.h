@@ -11,7 +11,7 @@ class List {
     };
 	int   theSize;
 	Node *head;
-    Node *tail;
+	Node *tail;
 
   public:
 	List() {
