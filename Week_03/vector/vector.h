@@ -28,7 +28,7 @@ class Vector {
 		objects = new Object[theCapacity];
 	}
 
-    ~Vector( ) { delete [] objects; }
+	~Vector( ) { delete [] objects; }
 
 	Object &operator[](int index) {
 		assert(index > 0 && index < theSize);
