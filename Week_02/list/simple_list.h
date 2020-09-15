@@ -4,10 +4,10 @@
 template <typename Object>
 class List {
   private:
-    struct Node {
-        Object  data;
-        Node   *next;
-    };
+	struct Node {
+	    Object  data;
+	    Node   *next;
+	};
 	int   theSize;
 	Node *head;
 	Node *tail;

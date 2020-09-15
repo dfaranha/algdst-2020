@@ -4,10 +4,10 @@
 class List {
   private:
     // A basic simple linked list node.
-    struct Node {
-        int    value;
-        Node   *next;
-    };
+	struct Node {
+	    int    value;
+	    Node   *next;
+	};
 
 	int   theSize;
 	Node *head;
