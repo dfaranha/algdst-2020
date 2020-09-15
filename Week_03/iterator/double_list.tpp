@@ -1,5 +1,3 @@
-#include <cassert>
-
 template <typename Object>
 void List<Object>::clear() {
 	Node *p = head->next;

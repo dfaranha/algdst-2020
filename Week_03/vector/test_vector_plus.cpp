@@ -15,6 +15,7 @@ int main(void) {
 	/* We initialize with default capacity, resize later. */
 	Vector<int> v;
 	Vector<int>::iterator itr;
+	Vector<int>::const_iterator citr;
 
 	/* Reserve space for 25 elements */
 	v.reserve(20);
@@ -30,8 +31,8 @@ int main(void) {
 	Vector<int> s = v.slice(1, v.size() - 1);
 
 	/* Now let us process the slice through iterator */
-	for(itr = s.begin(); itr != s.end(); itr++) {
-	    cout << *itr << " ";
+	for(citr = s.begin(); citr != s.end(); citr++) {
+	    cout << *citr << " ";
 	}
 	cout << endl;
 
