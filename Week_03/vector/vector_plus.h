@@ -38,22 +38,22 @@ class Vector {
 		return objects[index];
 	}
 
-    bool empty() { return size( ) == 0; }
-    int size() { return theSize; }
-    int capacity() { return theCapacity; }
+	bool empty() { return size( ) == 0; }
+	int size() { return theSize; }
+	int capacity() { return theCapacity; }
 	void push_back(const Object& x);
 	void pop_back();
 	const Object &back();
 	void resize(int newCapacity);
 	void reserve(int capacity);
 
-    typedef Object *iterator;
-    typedef const Object *const_iterator;
+	typedef Object *iterator;
+	typedef const Object *const_iterator;
 
-    iterator begin() { return &objects[0]; }
-    const_iterator begin() const { return &objects[0]; }
-    iterator end() { return &objects[size()]; }
-    const_iterator end() const { return &objects[size()]; }
+	iterator begin() { return &objects[0]; }
+	const_iterator begin() const { return &objects[0]; }
+	iterator end() { return &objects[size()]; }
+	const_iterator end() const { return &objects[size()]; }
 
 	Vector<Object> slice(int x, int y);
 };
