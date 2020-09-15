@@ -1,8 +1,6 @@
 #ifndef _LIST_H_
 #define _LIST_H_
 
-template <typename Object> class ListIter;
-
 template <typename Object>
 class List {
   private:
