@@ -18,7 +18,7 @@ class Vector {
 	Vector() {
   		theSize = 0;
   		theCapacity = DEFAULT_CAPACITY;
-  		objects = new Object[theCapacity];
+  		objects = new Object[theCapacity + 1];
   	}
 
 	Vector(int capacity) {
@@ -27,7 +27,7 @@ class Vector {
 		}
 		theSize = 0;
 		theCapacity = capacity;
-		objects = new Object[theCapacity];
+		objects = new Object[theCapacity + 1];
 	}
 
 	~Vector( ) { delete [] objects; }
