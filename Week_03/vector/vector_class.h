@@ -5,7 +5,7 @@ using namespace std;
 
 #include <cassert>
 
-#define DEFAULT_CAPACITY	(2)
+#define DEFAULT_CAPACITY	(1)
 
 template <typename Object>
 class Vector {
@@ -41,11 +41,10 @@ class Vector {
 	void push_back(const Object& x);
 	void pop_back();
 	const Object &back();
-	void resize(int newCapacity);
+	void resize(int newSize);
 	void reserve(int capacity);
 
 	typedef Object* iterator;
-	typedef const Object* const_iterator;
 
 	iterator begin() { return &objects[0]; }
 	iterator end() { return &objects[size()]; }
