@@ -49,9 +49,6 @@ class Vector {
 
 	iterator begin() { return &objects[0]; }
 	iterator end() { return &objects[size()]; }
-
-	const_iterator begin() const { return &objects[0]; }
-	const_iterator end() const { return &objects[size()]; }
 };
 
 #include "vector.tpp"
