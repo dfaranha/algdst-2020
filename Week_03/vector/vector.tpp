@@ -1,4 +1,11 @@
 template <typename Object>
+void Vector<Object>::resize( int newSize ) {
+	if( newSize > theCapacity )
+		reserve( newSize * 2 );
+	theSize = newSize;
+}
+
+template <typename Object>
 void Vector<Object>::reserve(int newCapacity) {
 	int i;
 

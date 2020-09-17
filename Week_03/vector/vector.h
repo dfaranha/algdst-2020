@@ -18,14 +18,14 @@ class Vector {
 	Vector() {
   		theSize = 0;
   		theCapacity = DEFAULT_CAPACITY;
-  		objects = new Object[theCapacity];
+  		objects = new Object[theCapacity + 1];
   	}
 
 	Vector(int capacity) {
 		assert(capacity >= 0);
 		theSize = 0;
 		theCapacity = capacity;
-		objects = new Object[theCapacity];
+		objects = new Object[theCapacity + 1];
 	}
 
 	~Vector( ) { delete [] objects; }
@@ -48,8 +48,9 @@ class Vector {
 	typedef const Object * const_iterator;
 
 	iterator begin() { return &objects[0]; }
-	const_iterator begin() const { return &objects[0]; }
 	iterator end() { return &objects[size()]; }
+
+	const_iterator begin() const { return &objects[0]; }
 	const_iterator end() const { return &objects[size()]; }
 };
 
