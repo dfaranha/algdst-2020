@@ -45,7 +45,7 @@ class Vector {
 	void reserve(int capacity);
 
 	typedef Object* iterator;
-	typedef const Object * const_iterator;
+	typedef const Object* const_iterator;
 
 	iterator begin() { return &objects[0]; }
 	iterator end() { return &objects[size()]; }
