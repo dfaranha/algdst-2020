@@ -51,9 +51,10 @@ class Vector {
 	typedef const Object *const_iterator;
 
 	iterator begin() { return &objects[0]; }
-	const_iterator begin() const { return &objects[0]; }
 	iterator end() { return &objects[size()]; }
-	const_iterator end() const { return &objects[size()]; }
+
+	const_iterator cbegin() const { return &objects[0]; }
+	const_iterator cend() const { return &objects[size()]; }
 
 	Vector<Object> slice(int x, int y);
 };
