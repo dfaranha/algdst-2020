@@ -3,6 +3,8 @@ class iterator {
 	  Node *current;
 
   public:
+	friend class List<Object>;
+
 	// Public constructor for iterator.
 	iterator() {
 		current = nullptr;
@@ -14,6 +16,25 @@ class iterator {
 
 	const Object& operator* () {
 		return current->data;
+	}
+
+	bool operator== (const iterator & rhs) {
+		return current == rhs.current;
+	}
+
+	bool operator!= (const iterator & rhs) {
+		return !(*this == rhs);
+	}
+
+	/* Pre-in/decrement. */
+	iterator& operator++ () {
+		current = current->next;
+		return *this;
+	}
+
+	iterator& operator-- () {
+		current = current->prev;
+		return *this;
 	}
 
 	/* Post-in/decrement. */
@@ -28,25 +49,4 @@ class iterator {
 		--(*this);
 		return old;
 	}
-
-	/* Pre-in/decrement. */
-	iterator& operator++ () {
-		current = current->next;
-		return *this;
-	}
-
-	iterator& operator-- () {
-		current = current->prev;
-		return *this;
-	}
-
-	bool operator== (const iterator & rhs) {
-		return current == rhs.current;
-	}
-
-	bool operator!= (const iterator & rhs) {
-		return !(*this == rhs);
-	}
-
-	friend class List<Object>;
 };

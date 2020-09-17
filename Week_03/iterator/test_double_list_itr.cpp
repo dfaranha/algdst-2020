@@ -17,7 +17,6 @@ int main(int argc, char *argv[]) {
 		cout << "Next element:   " << *itr << endl;
 	}
 
-	/* We need to overload operator + to perform arithmetic. */
 	itr = list->begin();
 	itr++;
 	itr = list->insert(itr, 20);
