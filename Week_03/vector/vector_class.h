@@ -50,6 +50,6 @@ class Vector {
 	iterator end() { return &objects[size()]; }
 };
 
-#include "vector.tpp"
+#include "vector_class.tpp"
 
 #endif

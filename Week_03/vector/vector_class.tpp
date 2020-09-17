@@ -31,16 +31,12 @@ void Vector<Object>::push_back(const Object &x) {
 
 template <typename Object>
 void Vector<Object>::pop_back() {
-	if(empty()) {
-		throw underflow_error{};
-	}
+	assert(!empty());
 	theSize--;
 }
 
 template <typename Object>
 const Object &Vector<Object>::back() {
-	if(empty()) {
-		throw underflow_error{};
-	}
+	assert(!empty());
 	return objects[theSize - 1];
 }

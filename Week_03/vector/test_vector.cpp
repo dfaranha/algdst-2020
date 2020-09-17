@@ -1,5 +1,5 @@
 #include <iostream>
-#include "vector.h"
+#include "vector_class.h"
 
 using namespace std;
 
@@ -15,7 +15,7 @@ int main(void) {
 	v.push_back(2);
 
 	cout << "Capacity: " << v.capacity() << " elements" << endl;
-	/* Reserve space for 25 elements */
+	/* Reserve space for 20 elements */
 	v.reserve(20);
 	for (i = 0; i < 20; ++i) {
 		v.push_back(i);
