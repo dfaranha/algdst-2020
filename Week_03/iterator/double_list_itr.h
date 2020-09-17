@@ -16,28 +16,28 @@ class iterator {
 		return current->data;
 	}
 
-	/* Pre-increment. */
-	iterator & operator++ () {
-		current = current->next;
-		return *this;
-	}
-
-	/* Post-increment. */
+	/* Post-in/decrement. */
 	iterator operator++ (int) {
 		iterator old = *this;
 		++(*this);
 		return old;
 	}
 
-	iterator & operator-- () {
-		current = current->prev;
-		return *this;
-	}
-
 	iterator operator-- (int) {
 		iterator old = *this;
 		--(*this);
 		return old;
+	}
+
+	/* Pre-in/decrement. */
+	iterator & operator++ () {
+		current = current->next;
+		return *this;
+	}
+
+	iterator & operator-- () {
+		current = current->prev;
+		return *this;
 	}
 
 	bool operator== (const iterator & rhs) {
