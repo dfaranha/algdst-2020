@@ -12,7 +12,7 @@ class iterator {
 		current = p;
 	}
 
-	const Object & operator* () {
+	const Object& operator* () {
 		return current->data;
 	}
 
@@ -30,12 +30,12 @@ class iterator {
 	}
 
 	/* Pre-in/decrement. */
-	iterator & operator++ () {
+	iterator& operator++ () {
 		current = current->next;
 		return *this;
 	}
 
-	iterator & operator-- () {
+	iterator& operator-- () {
 		current = current->prev;
 		return *this;
 	}

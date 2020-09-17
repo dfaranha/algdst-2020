@@ -30,8 +30,10 @@ class List {
 	void clear();
 	void push_front(const Object& x);
 	void push_back(const Object& x);
-	Object pop_front();
-	Object pop_back();
+	void pop_front();
+	void pop_back();
+	Object front();
+	Object back();
 
 	/* We define the iterator in another file. */
 	#include "double_list_itr.h"

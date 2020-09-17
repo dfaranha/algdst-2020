@@ -35,7 +35,7 @@ void List<Object>::push_back(const Object& x) {
 }
 
 template <typename Object>
-Object List<Object>::pop_front() {
+void List<Object>::pop_front() {
 	Node *p = head->next;
 	Node *t = p->next;
 	Object x = p->data;
@@ -43,11 +43,10 @@ Object List<Object>::pop_front() {
 	head->next = t;
 	theSize--;
 	delete p;
-	return x;
 }
 
 template <typename Object>
-Object List<Object>::pop_back() {
+void List<Object>::pop_back() {
 	Node *p = tail->prev;
 	Node *t = p->prev;
 	Object x = p->data;
@@ -55,5 +54,14 @@ Object List<Object>::pop_back() {
 	tail->prev = t;
 	theSize--;
 	delete p;
-	return x;
+}
+
+template <typename Object>
+Object List<Object>::front() {
+	return head->next->data;
+}
+
+template <typename Object>
+Object List<Object>::back() {
+	return tail->prev->data;
 }
