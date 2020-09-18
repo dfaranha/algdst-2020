@@ -39,7 +39,7 @@ class Vector {
 	}
 
 	bool empty() { return size( ) == 0; }
-	int size() { return theSize; }
+	int size() const { return theSize; }
 	int capacity() { return theCapacity; }
 	void push_back(const Object& x);
 	void pop_back();
