@@ -24,7 +24,7 @@ class Vector {
 	Vector(int size) {
 		assert(size >= 0);
 		theSize = size;
-		theCapacity = size + DEFAULT_CAPACITY;
+		theCapacity = size;
 		objects = new Object[theCapacity + 1];
 	}
 
