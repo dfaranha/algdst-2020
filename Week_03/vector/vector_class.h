@@ -21,10 +21,10 @@ class Vector {
   		objects = new Object[theCapacity + 1];
   	}
 
-	Vector(int capacity) {
-		assert(capacity >= 0);
-		theSize = 0;
-		theCapacity = capacity;
+	Vector(int size) {
+		assert(size >= 0);
+		theSize = size;
+		theCapacity = size + DEFAULT_CAPACITY;
 		objects = new Object[theCapacity + 1];
 	}
 

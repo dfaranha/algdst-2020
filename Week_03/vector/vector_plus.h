@@ -21,12 +21,12 @@ class Vector {
   		objects = new Object[theCapacity + 1];
   	}
 
-	Vector(int capacity) {
-		if (capacity <= 0) {
-			throw invalid_argument("Negative capacity.");
+	Vector(int size) {
+		if (size <= 0) {
+			throw invalid_argument("Negative size.");
 		}
-		theSize = 0;
-		theCapacity = capacity;
+		theSize = size;
+		theCapacity = size;
 		objects = new Object[theCapacity + 1];
 	}
 
