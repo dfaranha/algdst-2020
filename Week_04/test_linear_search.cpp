@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 
-#include "binary_search.h"
+#include "linear_search.h"
 
 using namespace std;
 
@@ -28,8 +28,8 @@ int main(void) {
 
 		j = rand() % MAX;
 
-		/* Now search using binary search. */
-        itr = binarySearch(v.begin(), v.end(), j);
+		/* Now search using linear search. */
+        itr = linearSearch(v.begin(), v.end(), j);
         if (itr != v.end()) {
                 cout << "Found element: " << *itr << endl;
         } else {
