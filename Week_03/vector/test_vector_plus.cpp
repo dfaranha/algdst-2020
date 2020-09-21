@@ -36,5 +36,10 @@ int main(void) {
 	}
 	cout << endl;
 
+	for(i = 0; i < s.size(); i++) {
+	    cout << s.at(i) << " ";
+	}
+	cout << endl;
+
    return 0;
 }

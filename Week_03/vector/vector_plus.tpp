@@ -46,11 +46,19 @@ Vector<Object> Vector<Object>::slice(int x, int y) {
 	iterator iter;
 
     // Store elements in the sliced vector
-    Vector<Object> result(y - x + 1);
+    Vector<Object> result;
 	for (iter = start; iter != end; iter++) {
 		result.push_back(*iter);
 	}
 
     // Return the final sliced vector
     return result;
+}
+
+template <typename Object>
+Object& Vector<Object>::at(int pos) {
+	if (pos < 0 || pos >= size()) {
+		throw out_of_range("Invalid position.");
+	}
+	return objects[pos];
 }

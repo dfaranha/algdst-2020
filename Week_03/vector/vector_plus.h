@@ -46,6 +46,7 @@ class Vector {
 	const Object &back();
 	void resize(int newCapacity);
 	void reserve(int capacity);
+	Object& at(int pos);
 
 	typedef Object *iterator;
 	typedef const Object *const_iterator;
