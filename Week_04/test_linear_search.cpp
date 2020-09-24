@@ -33,7 +33,7 @@ int main(void) {
         if (itr != v.end()) {
                 cout << "Found element: " << *itr << endl;
         } else {
-			cout << "Element not found!" << endl;
+			cout << "Element not found: " << j << endl;
 		}
 
 		return 0;

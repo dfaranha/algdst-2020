@@ -1,16 +1,32 @@
 using namespace std;
 
-/**
- * Performs the standard binary search using two comparisons per level.
-*/
+/** Performs the standard binary search using two comparisons per level. */
+
+template <typename iterator, typename Object>
+iterator recBinarySearch(iterator first, iterator last, const Object& value) {
+	iterator begin = first;
+	iterator end = last;
+	if (begin != end) {
+		int distance = std::distance(begin, end);
+		iterator middle = std::next(begin, distance/2);
+		if(*middle == value) {
+			return middle;
+		} else if(*middle < value) {
+			return recBinarySearch(next(middle), last, value);
+		} else {
+			return recBinarySearch(first, middle, value);
+		}
+	}
+	return last;
+}
+
 template <typename iterator, typename Object>
 iterator binarySearch(iterator first, iterator last, const Object& value) {
 	iterator begin = first;
 	iterator end = last;
-	while(begin != end) {
+	while (begin != end) {
 		int distance = std::distance(begin, end);
-		iterator middle = begin;
-		std::advance(begin, distance/2);
+		iterator middle = std::next(begin, distance/2);
 		if(*middle == value) {
 			return middle;
 		} else if(*middle < value) {

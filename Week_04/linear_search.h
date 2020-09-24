@@ -1,7 +1,7 @@
 using namespace std;
 
 /**
- * Performs the standard binary search using two comparisons per level.
+ * Performs the standard linear search using one comparison per item.
 */
 template <typename iterator, typename Object>
 iterator linearSearch(iterator first, iterator last, const Object& value) {
