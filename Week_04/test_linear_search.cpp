@@ -18,7 +18,6 @@ int main(void) {
         for (i = 0; i < N; i++) {
                 v.push_back(rand() % MAX);
         }
-        std::sort(v.begin(), v.end());
 
         /* Now let us print the vector through iterator */
         for(itr = v.begin(); itr != v.end(); itr++) {
@@ -31,7 +30,7 @@ int main(void) {
 		/* Now search using linear search. */
         itr = linearSearch(v.begin(), v.end(), j);
         if (itr != v.end()) {
-                cout << "Found element: " << *itr << endl;
+            cout << "Found element: " << *itr << endl;
         } else {
 			cout << "Element not found: " << j << endl;
 		}

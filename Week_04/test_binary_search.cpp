@@ -31,7 +31,7 @@ int main(void) {
 		/* Now search using binary search. */
         itr = binarySearch(v.begin(), v.end(), j);
         if (itr != v.end()) {
-                cout << "Found element: " << *itr << endl;
+            cout << "Found element: " << *itr << endl;
         } else {
 			cout << "Element not found: " << j << endl;
 		}
