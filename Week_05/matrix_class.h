@@ -23,6 +23,15 @@ class Matrix {
 
 		Matrix(vector<vector<Object>> v) : array{v} { }
 
+		int numrows() const { return array.size( ); }
+
+		int numcols() const {
+			if (numrows() > 0) {
+				return array[0].size();
+			}
+			return 0;
+		}
+
 		const vector<Object>& operator[](int row) const {
 			if (row < 0 || row >= array.size())
 				throw out_of_range("Invalid row.");
@@ -35,13 +44,17 @@ class Matrix {
 			return array[row];
 		}
 
-		int numrows() const { return array.size( ); }
-
-		int numcols() const {
-			if (numrows() > 0) {
-				return array[0].size();
+		ostream& operator<<(ostream& t) {
+			cout << fixed;
+			cout.precision(2);
+			for(int i = 0; i < numrows(); ++i) {
+				cout << "|";
+				for(int j = 0; j < numcols(); ++j) {
+					cout << " " << setw(6) << array[i][j] << " ";
+				}
+				cout << "|" << endl;
 			}
-			return 0;
+			return t;
 		}
 
 		void add(Matrix& mat);
