@@ -34,5 +34,5 @@ int main(void) {
 	}
 	cout << endl;
 
-   return 0;
+	return 0;
 }
