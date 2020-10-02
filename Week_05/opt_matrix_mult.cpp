@@ -14,31 +14,29 @@ using namespace std;
 * Note: Entries below main diagonals of m and lastChange
 * are meaningless and uninitialized.
 */
-int optMatrix(const vector<int>&c, Matrix<int>&m,
-		Matrix<int>&lastChange) {
-	int n = c.size() - 1;
+int optMatrix(const vector<int>&c, Matrix<int>&M, Matrix<int>&change) {
+	int left, right, cost, i, j, k, n = c.size() - 1;
 
-	for (int left = 1; left <= n; ++left)
-		m[left][left] = 0;
+	for (left = 1; left <= n; ++left)
+		M[left][left] = 0;
 
-	for (int k = 1; k < n; ++k) {
+	for (k = 1; k < n; ++k) {
 		// k is right - left
-		for (int left = 1; left <= n - k; ++left) {
+		for (left = 1; left <= n - k; ++left) {
 			// For each position
-			int right = left + k;
-			m[left][right] = INT_MAX;
-			for (int i = left; i < right; ++i) {
-				int thisCost = m[left][i] + m[i + 1][right]
-						+ c[left - 1] * c[i] * c[right];
-				if (thisCost < m[left][right]) { // Update min
-					m[left][right] = thisCost;
-					lastChange[left][right] = i;
+			right = left + k;
+			M[left][right] = INT_MAX;
+			for (i = left; i < right; ++i) {
+				cost = M[left][i] + M[i + 1][right] +
+					c[left - 1] * c[i] * c[right];
+				if (cost < M[left][right]) { // Update min
+					M[left][right] = cost;
+					change[left][right] = i;
 				}
 			}
 		}
 	}
-
-	return m[1][n];
+	return M[1][n];
 }
 
 int main(int argc, char *argv[]) {
