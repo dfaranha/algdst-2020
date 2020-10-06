@@ -44,7 +44,7 @@ class Matrix {
 			return array[row];
 		}
 
-		friend ostream& operator<<(ostream& t, Matrix<Object> mat) {
+		friend ostream& operator<<(ostream& t, Matrix<Object>& mat) {
 			cout << fixed;
 			cout.precision(2);
 			for(int i = 0; i < mat.numrows(); ++i) {
