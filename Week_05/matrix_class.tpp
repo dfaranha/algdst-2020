@@ -38,17 +38,3 @@ Matrix<Object>& multiply(Matrix<Object>& a, Matrix<Object>& b) {
 
 	return *mult;
 }
-
-template <typename Object>
-ostream& operator<<(ostream& t, Matrix<Object> mat) {
-	cout << fixed;
-	cout.precision(2);
-	for(int i = 0; i < mat.numrows(); ++i) {
-		cout << "|";
-		for(int j = 0; j < mat.numcols(); ++j) {
-			cout << " " << setw(6) << mat[i][j] << " ";
-		}
-		cout << "|" << endl;
-	}
-	return t;
-}

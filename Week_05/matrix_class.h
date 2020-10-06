@@ -44,13 +44,13 @@ class Matrix {
 			return array[row];
 		}
 
-		ostream& operator<<(ostream& t) {
+		friend ostream& operator<<(ostream& t, Matrix<Object> mat) {
 			cout << fixed;
 			cout.precision(2);
-			for(int i = 0; i < numrows(); ++i) {
+			for(int i = 0; i < mat.numrows(); ++i) {
 				cout << "|";
-				for(int j = 0; j < numcols(); ++j) {
-					cout << " " << setw(6) << array[i][j] << " ";
+				for(int j = 0; j < mat.numcols(); ++j) {
+					cout << " " << setw(6) << mat[i][j] << " ";
 				}
 				cout << "|" << endl;
 			}
