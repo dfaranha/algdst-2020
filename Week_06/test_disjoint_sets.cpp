@@ -8,8 +8,7 @@ int main() {
 	int numElements = 128;
 	int numInSameSet = 16;
 
-	DisjSets ds {
-	numElements};
+	DisjSets ds { numElements };
 	int set1, set2;
 
 	for (int k = 1; k < numInSameSet; k *= 2) {
