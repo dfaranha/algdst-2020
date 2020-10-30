@@ -1,5 +1,5 @@
-#ifndef MERGE_SORT_H
-#define MERGE_SORT_H
+#ifndef _MERGE_SORT_H_
+#define _MERGE_SORT_H_
 
 /**
  * Internal method that merges two sorted halves of a subarray.

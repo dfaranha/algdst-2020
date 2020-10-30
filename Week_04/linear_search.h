@@ -1,3 +1,6 @@
+#ifndef _LINEAR_SEARCH_H_
+#define _LINEAR_SEARCH_H_
+
 using namespace std;
 
 /**
@@ -16,3 +19,5 @@ iterator linearSearch(iterator first, iterator last, const Object& value) {
 	}
 	return end;
 }
+
+#endif

@@ -1,5 +1,5 @@
-#ifndef DISJ_SETS_H
-#define DISJ_SETS_H
+#ifndef _DISJ_SETS_H_
+#define _DISJ_SETS_H_
 
 // DisjSets class
 //

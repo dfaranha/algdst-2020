@@ -1,3 +1,6 @@
+#ifndef _BINARY_SEARCH_H_
+#define _BINARY_SEARCH_H_
+
 using namespace std;
 
 /** Performs the standard binary search using two comparisons per level. */
@@ -37,3 +40,5 @@ iterator binarySearch(iterator first, iterator last, const Object& value) {
 	}
 	return last;
 }
+
+#endif

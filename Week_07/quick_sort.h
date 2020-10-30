@@ -1,5 +1,5 @@
-#ifndef QUICK_SORT_H
-#define QUICK_SORT_H
+#ifndef _QUICK_SORT_H_
+#define _QUICK_SORT_H_
 
 /**
  * Order left, center, and right and hide the pivot.
