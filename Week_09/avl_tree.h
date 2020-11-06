@@ -67,32 +67,12 @@ class AvlTree {
 	}
 
 	/**
-     * Internal method to insert into a subtree.
-     * x is the item to insert.
-     * t is the node that roots the subtree.
-     * Set the new root of the subtree.
-     */
-	void insert(Comparable && x, AvlNode * &t) {
-		if (t == nullptr)
-			t = new AvlNode {
-			std::move(x), nullptr, nullptr};
-		else {
-			if (x < t->element)
-				insert(std::move(x), t->left);
-			else if (t->element < x)
-				insert(std::move(x), t->right);
-		}
-
-		balance(t);
-	}
-
-	/**
      * Internal method to remove from a subtree.
      * x is the item to remove.
      * t is the node that roots the subtree.
      * Set the new root of the subtree.
      */
-	void remove(const Comparable & x, AvlNode * &t) {
+	void remove(const Comparable& x, AvlNode * &t) {
 		if (t == nullptr)
 			return;				// Item not found; do nothing
 
