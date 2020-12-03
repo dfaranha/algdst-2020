@@ -4,8 +4,11 @@ using namespace std;
 #include <stack>
 #include <iostream>
 #include <climits>
+#include <algorithm>
+#include "../Week_05/matrix_class.h"
+#include "../Week_06/disjoint_sets.h"
 
-#define INFINITY INT_MAX
+#define INFINITY 1000000
 
 class Graph {
   private:
@@ -27,6 +30,7 @@ class Graph {
 	Graph(int vertices = 1) : adj(vertices), weight(vertices) {
 		for (int i = 0; i < vertices; i++) {
 			weight[i].resize(vertices, INFINITY);
+			weight[i][i] = 0; // Initialize self-edges with zero cost.
 		}
 	}
 
@@ -36,7 +40,29 @@ class Graph {
 	void dfs(int v, vector<int>& path);
 	void bfs(int s, vector<int>& path, vector<int>& dist);
 	void topologicalSort(int v);
+	/**
+	 * Count the number of connected components in the graph.
+	 */
 	int connectedComponents();
+
+	/*
+	 * Compute the single-source shortest path from node s to every other node
+	 * in the graph. Path will store the edges of the shortest paths and dist
+	 * the actual distances.
+	 */
 	void shortestPath(int s, vector<int>& path, vector<int>& dist);
+
+	/**
+	 * Compute all-shortest paths.
+	 * dist contains the values of the shortest path.
+	 * Vertices are numbered starting at 0; all arrays
+	 * have equal dimension. A negative cycle exists if
+	 * dist[i][i] is set to a negative value.
+	 * Actual path can be computed using path[][].
+	 */
+	void allPairs(Matrix<int>& path, Matrix<int>& dist);
+
+	int kruskalMST();
+	int primMST();
 	void print();
 };
