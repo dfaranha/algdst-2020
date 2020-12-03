@@ -20,7 +20,7 @@ int main() {
 	for (int i = 0; i < 5; i++) {
 		cout << "Distance from 0 to " << i << " is " << dist[i] << endl;
 	}
-	cout << graph.components() << " connected component(s)" << endl;
+	cout << graph.connectedComponents() << " connected component(s)" << endl;
 
 	Graph digraph(7);
     digraph.addWeightedEdge(0, 1, 1);
@@ -37,14 +37,14 @@ int main() {
     digraph.addWeightedEdge(6, 5, 8);
     digraph.print();
 	cout << "Topological sort: ";
-	digraph.topsort(0);
+	digraph.topologicalSort(0);
 	cout << endl;
 
-	digraph.dijkstra(0, path, dist);
+	digraph.shortestPath(0, path, dist);
 	for (int i = 0; i < 5; i++) {
 		cout << "Distance from 0 to " << i << " is " << dist[i] << endl;
 	}
-	cout << digraph.components() << " connected component(s)" << endl;
+	cout << digraph.connectedComponents() << " connected component(s)" << endl;
 
     return 0;
 }

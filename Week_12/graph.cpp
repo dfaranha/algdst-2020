@@ -48,7 +48,7 @@ void Graph::bfs(int s, vector<int>& path, vector<int>& dist) {
 	}
 }
 
-int Graph::components() {
+int Graph::connectedComponents() {
 	int components = 0;
 	stack<int> sorting;
 	vector<int> path(adj.size());
@@ -67,7 +67,7 @@ int Graph::components() {
 	return components;
 }
 
-void Graph::topsort(int v) {
+void Graph::topologicalSort(int v) {
 	stack<int> sorting;
 	vector<int> path(adj.size());
 	vector<bool> visited(adj.size());
@@ -87,7 +87,7 @@ void Graph::addWeightedEdge(int u, int v, int w) {
 	weight[u][v] = w;
 }
 
-void Graph::dijkstra(int s, vector<int>& path, vector<int>& dist) {
+void Graph::shortestPath(int s, vector<int>& path, vector<int>& dist) {
 	priority_queue<int> q;
 	vector<bool> visited(adj.size());
 
@@ -106,7 +106,7 @@ void Graph::dijkstra(int s, vector<int>& path, vector<int>& dist) {
 		}
 		u = index; // find minimum node
 		visited[u] = true;
-		for(int v=0; v < adj.size(); v++) {
+		for (auto v : adj[u]) {
 			if(!visited[v] && weight[u][v] && dist[u] != INT_MAX
 					&& dist[u] + weight[u][v] < dist[v]) {
 				dist[v] = dist[u] + weight[u][v];

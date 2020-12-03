@@ -5,7 +5,7 @@ using namespace std;
 #include <iostream>
 #include <climits>
 
-#define INFINITY 1000000
+#define INFINITY INT_MAX
 
 class Graph {
   private:
@@ -35,8 +35,8 @@ class Graph {
 	void addWeightedEdge(int u, int v, int w);
 	void dfs(int v, vector<int>& path);
 	void bfs(int s, vector<int>& path, vector<int>& dist);
-	void topsort(int v);
-	int components();
-	void dijkstra(int s, vector<int>& path, vector<int>& dist);
+	void topologicalSort(int v);
+	int connectedComponents();
+	void shortestPath(int s, vector<int>& path, vector<int>& dist);
 	void print();
 };
