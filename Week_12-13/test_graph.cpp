@@ -75,6 +75,7 @@ int main() {
 	digraph.addWeightedEdge(6, 4, 10);
     digraph.addWeightedEdge(5, 6, 8);
     digraph.print();
+	
 	cout << "Kruskal's Minimum Spannig Tree has the following edges: ";
 	int weight = digraph.kruskalMST();
 	cout << "with weight of " << weight << endl;

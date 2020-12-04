@@ -213,8 +213,8 @@ int Graph::primMST() {
 			cout << u << " - " << parent[u] << ", ";
 		}
 
-        // Update key/parent of the adjacent verticesof the picked vertex.
-        for (int v = 0; v < adj.size(); v++) {
+        // Update key/parent of the adjacent vertices of the picked vertex.
+        for (auto v : adj[u]) {
             if (weight[u][v] && visited[v] == false && weight[u][v] < key[v]) {
 				parent[v] = u, key[v] = weight[u][v];
 			}
